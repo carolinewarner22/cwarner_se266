@@ -1,6 +1,6 @@
 <?php 
 
-//title, due, assigned_to, completed
+//associative array - title, due, assigned_to, completed
  $task = [
     "title"=> "Walk the dog",
     "due"=> "10:00AM",

@@ -1,4 +1,5 @@
 <?php
+//this is an array
 $animals = [
     'Cow',
     'Pig',

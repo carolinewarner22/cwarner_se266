@@ -68,16 +68,24 @@
             <h2>Fizz Buzz!</h2>
             <?php
             function fizzBuzz($num) {
+                //IF the number has a remainder of zero when divided by both 2 and divided by 3... return 'fizz buzz'
+
                 if ($num % 2 == 0 && $num % 3 == 0) {
                     return "Fizz Buzz";
+
+                    //if the remainder is zero when number is divided by 2
                 } elseif ($num % 2 == 0) {
                     return "Fizz";
+                    //if the remainder is zero when number is divided by 2
                 } elseif ($num % 3 == 0) {
                     return "Buzz";
+                    //if the number cannot be divided by 2 AND 3 evenly.. just display the number itself
                 } else {
                     return $num;
                 }
             }
+
+            //number starts at one, ends at 100.. adding one to count each time it loops and add a <br> tag
             for ($i = 1; $i <= 100; $i++) {
                 echo fizzBuzz($i) . "<br>";
             }

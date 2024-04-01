@@ -68,7 +68,7 @@
         <middle>
             <h2>Task List with Completion Status Using Booleans</h2>
             <ul>
-
+            <!--displaying each key+value of the array as separate <li> tags!-->
                 <li>
                     <strong>Name: </strong><?= $task['title']; ?>
                 </li>
@@ -84,8 +84,12 @@
                 <li>
                     <strong>Completed? </strong>
 
+                    <!-- if the value of key 'completed' is TRUE... display the checkmrk dingbat!-->
+
                     <?php if ($task['completed']) : ?>
                         <span class="icon">&#9989;</span>
+
+                    <!--if the value of key 'completed is FALSE... display the x-mark dingbat!-->
                     <?php else : ?>
                         <span class="icon">&#10060;</span>
                     <?php endif; ?>                    

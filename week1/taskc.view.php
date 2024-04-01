@@ -67,6 +67,7 @@
             <h2>Animal List Using an Array</h2>
             <ul>
                 <?php
+                //this is a for loop that loops through each item in th array and displays it as a list item
                     foreach ($animals as $animal){
                         echo "<li>$animal</li>";
                     }

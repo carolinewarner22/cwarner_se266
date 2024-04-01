@@ -66,8 +66,11 @@
         </nav>
         <middle>
             <h2>Using a Function to Check Age</h2>
+            <!--if the value of key 'age' is greater than or equal to 21... display a <p> tag including value of key 'name' that says person can come in!-->
                 <?php if ($person["age"] >= 21): ?>
                     <p><?php echo $person['name']; ?> can come in!</p>
+
+            <!--if the value is less than 21... display name and tell user the person cannot come in!-->
                 <?php else: ?>
                     <p><?php echo $person['name']; ?> can't come in.</p>
                 <?php endif; ?> 
