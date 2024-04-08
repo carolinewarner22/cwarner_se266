@@ -66,7 +66,7 @@
         <middle>
             <h2>Task List Using an Associative Array</h2>
             <ul>   
-                <!-- this for loop goes through the associative array and displays the key and corresponding value
+                <!-- this for loop goes through the associative array and displays the key and corresponding value ?-->
                 <?php foreach ($task as $description => $value) : ?>
                     <li><strong><?= $description; ?></strong>: <?= $value; ?>
                 <?php endforeach; ?>              
