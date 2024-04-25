@@ -1,46 +1,23 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $errors = [];
+require 'functions.php';
 
-    if (empty($_POST["firstName"])) {
-        $errors[] = "First name cannot be empty";
-    }
+$fName = '';
+$lName = '';
+$maritalStatus = '';
+$birthdate = '';
+$heightFt = '';
+$heightIn = '';
+$weight = '';
 
-    if (empty($_POST["lastName"])) {
-        $errors[] = "Last name cannot be empty";
-    }
-
-    if (!isset($_POST["maritalStatus"])) {
-        $errors[] = "Marital status must be selected";
-    }
-
-    $birthDate = $_POST["birthDate"];
-    if (!strtotime($birthDate)) {
-        $errors[] = "Invalid birth date";
-    }
-
-    $feet = intval($_POST["feet"]);
-    $inches = intval($_POST["inches"]);   
-    $height = $feet * 12 + $inches; 
-    if ($height <= 0 || $height > 120) { 
-        $errors[] = "Invalid height";
-    }
-
-    $weight = $_POST["weight"];
-    if ($weight <= 0 || $weight > 1000) { 
-        $errors[] = "Invalid weight";
-    }
-
-    if (!empty($errors)) {
-        foreach ($errors as $error) {
-            echo "<p>Error: $error</p>";
-        }
-    } else {
-        echo "<p>Form submitted successfully!</p>";
-    }
-} else {
-    header("Location: index.view.php");
-    exit;
+if (isset($_POST['patient_info_submit'])) {
+    $fName = filter_input(INPUT_POST,'fName', FILTER_SANITIZE_STRING);
+    $lName = filter_input(INPUT_POST,'lName', FILTER_SANITIZE_STRING);
+    $maritalStatus = filter_input(INPUT_POST,'maritalStatus', FILTER_SANITIZE_STRING);
+    $birthdate = filter_input(INPUT_POST,'birthdate', FILTER_SANITIZE_STRING);
+    $heightFt = filter_input(INPUT_POST,'heightFt', FILTER_VALIDATE_INT);
+    $heightIn = filter_input(INPUT_POST,'heightIn', FILTER_VALIDATE_INT);
+    $weight = filter_input(INPUT_POST,'weight', FILTER_VALIDATE_FLOAT);
 }
-require "index.view.php";
+
+require 'index.view.php';
